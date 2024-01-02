@@ -120,18 +120,16 @@
                       <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="label7" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="label8" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="label4" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="label6" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="pilihan" pref="229" max="32767" attributes="0"/>
                       <Component id="platMuhith" alignment="0" max="32767" attributes="0"/>
                       <Component id="TanggalMuhith" max="32767" attributes="0"/>
                       <Component id="jamMuhith" max="32767" attributes="0"/>
-                      <Component id="biayaMuhith" max="32767" attributes="0"/>
+                      <Component id="biayaMuhith" pref="229" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="134" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -155,19 +153,13 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="label7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="label4" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="label7" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                           <Component id="jamMuhith" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="pilihan" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <EmptySpace min="48" pref="77" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -201,29 +193,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="platMuhithActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="pilihan">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="Mobil"/>
-                <StringItem index="1" value="Motor"/>
-                <StringItem index="2" value=" "/>
-              </StringArray>
-            </Property>
-            <Property name="autoscrolls" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pilihanActionPerformed"/>
-          </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="java.awt.Label" name="label4">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Jenis Kendaraan"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="TanggalMuhith">
           <Properties>
             <Property name="enabled" type="boolean" value="false"/>
@@ -236,7 +205,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="biayaMuhith">
           <Properties>
-            <Property name="text" type="java.lang.String" value="5000"/>
+            <Property name="text" type="java.lang.String" value="3000"/>
             <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>

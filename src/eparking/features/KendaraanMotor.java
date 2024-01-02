@@ -18,15 +18,16 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ThinkPad
  */
-public class KendaraanMasuk extends javax.swing.JFrame {
+public class KendaraanMotor extends javax.swing.JFrame {
     String nol_jam = "";
     String nol_menit = "";
     String nol_detik = "";
+    String Jenis = "";
 
     /**
      * Creates new form KendaraanMasuk
      */
-    public KendaraanMasuk() {
+    public KendaraanMotor() {
         initComponents();
         selectedData();
         setJam();
@@ -52,8 +53,6 @@ public class KendaraanMasuk extends javax.swing.JFrame {
         label7 = new java.awt.Label();
         label8 = new java.awt.Label();
         platMuhith = new java.awt.TextField();
-        pilihan = new javax.swing.JComboBox<>();
-        label4 = new java.awt.Label();
         TanggalMuhith = new javax.swing.JTextField();
         jamMuhith = new javax.swing.JTextField();
         biayaMuhith = new javax.swing.JTextField();
@@ -94,21 +93,11 @@ public class KendaraanMasuk extends javax.swing.JFrame {
             }
         });
 
-        pilihan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mobil", "Motor", " " }));
-        pilihan.setAutoscrolls(true);
-        pilihan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pilihanActionPerformed(evt);
-            }
-        });
-
-        label4.setText("Jenis Kendaraan");
-
         TanggalMuhith.setEnabled(false);
 
         jamMuhith.setEnabled(false);
 
-        biayaMuhith.setText("5000");
+        biayaMuhith.setText("3000");
         biayaMuhith.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -121,16 +110,14 @@ public class KendaraanMasuk extends javax.swing.JFrame {
                     .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pilihan, 0, 229, Short.MAX_VALUE)
                     .addComponent(platMuhith, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TanggalMuhith)
                     .addComponent(jamMuhith)
-                    .addComponent(biayaMuhith))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(biayaMuhith, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,16 +136,11 @@ public class KendaraanMasuk extends javax.swing.JFrame {
                     .addComponent(TanggalMuhith, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(jamMuhith, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pilihan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48))
+                        .addComponent(jamMuhith, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 77, Short.MAX_VALUE))
         );
 
         label5.getAccessibleContext().setAccessibleName("No Plat");
@@ -257,15 +239,6 @@ public class KendaraanMasuk extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_platMuhithActionPerformed
 
-    private void pilihanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihanActionPerformed
-        // TODO add your handling code here:
-        if(pilihan.getSelectedItem() == "Mobil"){
-            biayaMuhith.setText("5000");
-        } else {
-            biayaMuhith.setText("3000");
-        }
-    }//GEN-LAST:event_pilihanActionPerformed
-
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
         // TODO add your handling code here:
         if(platMuhith.getText().equals("")){
@@ -273,7 +246,7 @@ public class KendaraanMasuk extends javax.swing.JFrame {
         } else {
             String SQL = "INSERT INTO datamasuk(tglmasuk,plat,jenis,jammasuk,biaya)"
                     +"VALUES('"+TanggalMuhith.getText()+"','"+platMuhith.getText()
-                    +"','"+pilihan.getSelectedItem()+"','"+jamMuhith.getText()+"','"+biayaMuhith.getText()+"')";
+                    +"','"+Jenis+"','"+jamMuhith.getText()+"','"+biayaMuhith.getText()+"')";
             
             int status = DBConnection.execute(SQL);
             if(status == 1){
@@ -302,20 +275,21 @@ public class KendaraanMasuk extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(KendaraanMasuk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KendaraanMotor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(KendaraanMasuk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KendaraanMotor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(KendaraanMasuk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KendaraanMotor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(KendaraanMasuk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(KendaraanMotor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new KendaraanMasuk().setVisible(true);
+                new KendaraanMotor().setVisible(true);
             }
         });
     }
@@ -332,12 +306,10 @@ public class KendaraanMasuk extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jamMuhith;
     private java.awt.Label label1;
-    private java.awt.Label label4;
     private java.awt.Label label5;
     private java.awt.Label label6;
     private java.awt.Label label7;
     private java.awt.Label label8;
-    private javax.swing.JComboBox<String> pilihan;
     private java.awt.TextField platMuhith;
     private javax.swing.JTable tabelMasuk;
     // End of variables declaration//GEN-END:variables
@@ -358,7 +330,7 @@ private void selectedData() {
                 dtm.addRow(data);
             }
         } catch (SQLException ex){
-            Logger.getLogger(KendaraanMasuk.class.getName()).log(Level.SEVERE,null,ex);
+            Logger.getLogger(KendaraanMotor.class.getName()).log(Level.SEVERE,null,ex);
         }
         tabelMasuk.setModel(dtm);
     }
